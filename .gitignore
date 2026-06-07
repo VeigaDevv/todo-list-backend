@@ -15,6 +15,7 @@ todolist/target/
 
 ### IntelliJ IDEA ###
 .idea
+.env
 *.iws
 *.iml
 *.ipr
