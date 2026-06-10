@@ -1,5 +1,6 @@
 package com.github.veigadevv.todolist.service;
 
+import com.github.veigadevv.todolist.exceptions.ResourceNotFoundException;
 import com.github.veigadevv.todolist.model.Task;
 import com.github.veigadevv.todolist.repository.TaskRepository;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,7 @@ public class TaskService {
     public Task getById(Long id) {
         Task task = taskRepository.findById(id);
         if (task == null) {
-            throw new RuntimeException("Tarefa não encontrada com o ID: " + id);
+            throw new ResourceNotFoundException(id);
         }
         return task;
     }
